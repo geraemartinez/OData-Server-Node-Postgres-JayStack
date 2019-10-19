@@ -3,7 +3,7 @@ import { Router, Request, Response } from 'express';
 
 class IndexController {
 
-  public path = '/';
+  public path = '/index';
   public router = express.Router();
 
   constructor() {
