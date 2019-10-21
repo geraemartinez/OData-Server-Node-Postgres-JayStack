@@ -1,5 +1,5 @@
 import { Edm, odata } from "odata-v4-server";
-
+import {Product} from "./Product"
 @Edm.Annotate({
     term: "UI.DisplayName",
     string: "Users"
@@ -37,7 +37,7 @@ export class User {
     @Edm.Date
     LastModifiedDate:Date;
 
-    @Edm.Date
+    @Edm.Int32
     LastModifiedById:number;
 
     @Edm.String

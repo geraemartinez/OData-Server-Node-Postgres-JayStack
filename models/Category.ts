@@ -35,7 +35,7 @@ export class Category {
     @Edm.Date
     LastModifiedDate:Date;
   
-    @Edm.Collection(Edm.EntityType("Product"))
+    @Edm.Collection(Edm.EntityType(Product))
     @Edm.Partner("Category")
     Products: Product[]
   }

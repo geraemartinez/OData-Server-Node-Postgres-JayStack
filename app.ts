@@ -23,13 +23,13 @@ class Application  {
         this.initializeMiddlewares();
         this.initializeControllers(controllers);
         this.initializeODataController();
-        this.initializeErrorHandling();
+        //this.initializeErrorHandling();
     }
 
     private initializeMiddlewares() {
         this.app.use(logger('dev'));
         this.app.use(express.json());
-        this.app.use(express.urlencoded({ extended: false }));
+        //this.app.use(express.urlencoded({ extended: false }));
         this.app.use(cookieParser());
         this.app.use(express.static(path.join(__dirname, 'public')));
     }

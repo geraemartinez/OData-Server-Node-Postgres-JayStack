@@ -1,4 +1,6 @@
 import { Edm, odata } from "odata-v4-server";
+import { Category } from "./Category";
+import 'reflect-metadata'
 
 @Edm.Annotate({
   term: "UI.DisplayName",
@@ -51,13 +53,22 @@ export class Product {
   @Edm.String
   ProductExternalKey:string;
 
+  @Edm.Int32
+  CreatedById: number;
+
+  @Edm.Int32
+  LastModifiedById:number;
   
+  @Edm.Int32
+  UnitMesureId:number;
 
+  @Edm.Int32
+  DepartmentId:number;
 
-  //createdBy: any={};
-  //lastModifiedBy:any={};
-  //unitMesure:any={};
-  //category: any={};
-  //department: any={};
-  constructor(){}
+  @Edm.Int32
+  CategoryId:number;
+  
+  @Edm.EntityType(Category)
+  @Edm.Partner("Products")
+  Category: Category
 }
